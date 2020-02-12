@@ -2,13 +2,11 @@
 
 import sys
 
-journal = sys.argv[1]
+import sys
 
 lines = []
-with open(journal, 'r') as file:
-    lines = file.readlines()
+for line in sys.stdin:
+    lines.append(line)
 
 for l in lines[:-1]:
     sys.stdout.write(l)
-
-# sys.stdout.write(lines[-1])

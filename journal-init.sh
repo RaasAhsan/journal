@@ -1,7 +1,7 @@
 #!/bin/bash
 
 journal-add() {
-    ./journal-add.py $JOURNAL_PATH ${*:1}
+    ./journal-add.py ${*:1} >> $JOURNAL_PATH
 }
 
 journal-cat() {
@@ -13,10 +13,11 @@ journal-tail() {
 }
 
 journal-drop() {
-    OUT=$(./journal-drop.py $JOURNAL_PATH)
+    OUT=$(journal-cat | ./journal-drop.py $JOURNAL_PATH)
     echo $OUT > $JOURNAL_PATH
 }
 
-export JOURNAL_PATH=~/.journal/journal.txt
-mkdir -p ~/.journal
-touch ~/.journal/journal.txt
+export JOURNAL_DIRECTORY=~/.journal
+export JOURNAL_PATH=$JOURNAL_DIRECTORY/journal.txt
+mkdir -p $JOURNAL_DIRECTORY
+touch $JOURNAL_PATH

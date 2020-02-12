@@ -1,5 +1,11 @@
 # log
 
+## Setup
+
+```bash
+$ source journal-init.sh
+```
+
 collection of bash and python scripts
 
 environment variable

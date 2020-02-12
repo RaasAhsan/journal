@@ -2,8 +2,10 @@
 
 import sys
 
+journal = sys.argv[1]
+
 lines = []
-with open('log.txt', 'r') as file:
+with open(journal, 'r') as file:
     lines = file.readlines()
 
 for l in lines[:-1]:

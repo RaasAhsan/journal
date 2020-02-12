@@ -8,3 +8,5 @@ with open('log.txt', 'r') as file:
 
 for l in lines[:-1]:
     sys.stdout.write(l)
+
+# sys.stdout.write(lines[-1])

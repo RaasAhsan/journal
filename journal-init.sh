@@ -23,3 +23,7 @@ journal-drop() {
     OUT=$(journal-cat | $DIRNAME/journal-drop.py $JOURNAL_PATH)
     echo $OUT > $JOURNAL_PATH
 }
+
+journal-cd() {
+    cd $JOURNAL_DIRECTORY
+}

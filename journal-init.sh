@@ -27,3 +27,16 @@ journal-drop() {
 journal-cd() {
     cd $JOURNAL_DIRECTORY
 }
+
+journal-git-push() {
+    cd $JOURNAL_DIRECTORY
+    git commit -am "journal"
+    git push origin master
+    cd -
+}
+
+journal-git-pull() {
+    cd $JOURNAL_DIRECTORY
+    git pull origin master
+    cd -
+}

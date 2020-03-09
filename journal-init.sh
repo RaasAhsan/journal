@@ -9,6 +9,7 @@ touch $JOURNAL_PATH
 
 journal-add() {
     $DIRNAME/journal-add.py ${*:1} >> $JOURNAL_PATH
+    journal-git-push
 }
 
 journal-cat() {
